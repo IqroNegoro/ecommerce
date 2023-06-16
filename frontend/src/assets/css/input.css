@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    table thead tr th, table tbody tr td {
+        border: 1px solid black;
+        padding: 4px;
+    }
+    
+    table thead tr:nth-child(odd), table tbody tr:nth-child(even) {
+        @apply bg-gray-200;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+}
+
+@layer components {
+    .nav-active {
+        @apply text-blue-500 relative;
+    }
+
+    .nav-active::after {
+        @apply content-[""] bg-blue-500 w-full h-1 absolute -bottom-4 left-0 shadow-sm shadow-blue-500;
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-2;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-blue-300 bg-opacity-50 backdrop-blur-md;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-blue-400 rounded-md;
+    }
+
+    .top-left {
+        transform-origin: 0 -100%;
+    }
+}
